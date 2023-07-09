@@ -35,6 +35,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"sass": "^1.63.6",
+		"svelte-feather-icons": "^4.0.1",
 		"svelte-preprocess": "^5.0.4"
 	}
 }

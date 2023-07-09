@@ -1,0 +1,220 @@
+:root {
+  font-size: 12px;
+  font-size: clamp(8px, 1.5vw, 15px);
+  --font-main: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-headings: "Zilla Slab", "Cascadia Code", Consolas, monospace;
+  --heading-base: 2.5rem;
+  --a: 1;
+  --mod: 20%;
+
+  --c1-h: 300;
+  --c1-s: 43%;
+  --c1-l: 44%;
+  /*hsl(300, 43%, 44%)*/
+  --c1: hsla(var(--c1-h), var(--c1-s), var(--c1-l), var(--a));
+  /*hsl(300, 43%, 24%)*/
+  --c1-dark: hsla(
+    var(--c1-h),
+    var(--c1-s),
+    calc(var(--c1-l) - var(--mod)),
+    var(--a)
+  );
+  /*hsl(300, 43%, 64%)*/
+  --c1-light: hsla(
+    var(--c1-h),
+    var(--c1-s),
+    calc(var(--c1-l) + var(--mod)),
+    var(--a)
+  );
+
+  --c2-h: 24;
+  --c2-s: 100%;
+  --c2-l: 63%;
+  /*hsl(24, 100%, 63%)*/
+  --c2: hsla(var(--c2-h), var(--c2-s), var(--c2-l), var(--a));
+  /*hsl(24, 100%, 43%)*/
+  --c2-dark: hsla(
+    var(--c2-h),
+    var(--c2-s),
+    calc(var(--c2-l) - var(--mod)),
+    var(--a)
+  );
+  /*hsl(24, 100%, 70%)*/
+  --c2-light: hsla(
+    var(--c2-h),
+    var(--c2-s),
+    calc(var(--c2-l) + var(--mod)),
+    var(--a)
+  );
+
+  --c3-h: 323;
+  --c3-s: 64%;
+  --c3-l: 38%;
+  /*hsl(323, 64%, 38%)*/
+  --c3: hsla(var(--c3-h), var(--c3-s), var(--c3-l), var(--a));
+  /*hsl(323, 64%, 23%)*/
+  --c3-dark: hsla(
+    var(--c3-h),
+    var(--c3-s),
+    calc(var(--c3-l) - var(--mod)),
+    var(--a)
+  );
+  /*hsl(323, 64%, 73%)*/
+  --c3-light: hsla(
+    var(--c3-h),
+    var(--c3-s),
+    calc(var(--c3-l) + var(--mod)),
+    var(--a)
+  );
+
+  --cfg: #333;
+  --cbg: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  font-size: inherit;
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #333;
+  font-family: var(--font-main);
+  color: var(--cfg);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  color: rgb(0, 100, 200);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: rgb(0, 80, 160);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-end {
+  display: block;
+  font-family: var(--font-headings);
+  font-weight: 500;
+  margin: 0.5em;
+}
+
+h1,
+h2,
+.section-end {
+  background: var(--cbg);
+}
+
+h1 {
+  font-size: var(--heading-base);
+  color: var(--c1-dark);
+}
+h2,
+.section-end {
+  font-size: calc(var(--heading-base) * 0.8);
+  color: hsla(var(--c1-h), var(--c1-s), calc(var(--c1-l) - 12%), var(--a));
+}
+
+h3 {
+  font-size: calc(var(--heading-base) * 0.6);
+  color: hsla(var(--c1-h), var(--c1-s), calc(var(--c1-l) - 8%), var(--a));
+}
+h4 {
+  font-size: calc(var(--heading-base) * 0.5);
+  color: var(--c1);
+}
+h5 {
+  font-size: calc(var(--heading-base) - 1.5em);
+  color: hsla(var(--c1-h), var(--c1-s), calc(var(--c1-l) + 10%), var(--a));
+}
+h6 {
+  font-size: calc(var(--heading-base) - 1.8em);
+  color: var(--c1-light);
+}
+
+p {
+  margin: 0rem 2rem 1rem;
+  font-size: 1.4rem;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+@media print {
+  :root {
+    --heading-base: 2em;
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 4rem;
+    margin: 0.5rem;
+  }
+
+  h2 {
+    text-transform: capitalize;
+    text-decoration: underline;
+  }
+
+  h1::before,
+  h2::before,
+  h1::after,
+  h2::after,
+  .section-end,
+  .underspace::after {
+    display: none !important;
+  }
+  p {
+    font-size: 1.2rem;
+  }
+  .underspace {
+    text-decoration: none !important;
+  }
+  @page {
+    size: 100%;
+    margin: 10mm;
+  }
+  html {
+    background-color: #ffffff;
+  }
+  body {
+    margin: 0;
+  }
+}
