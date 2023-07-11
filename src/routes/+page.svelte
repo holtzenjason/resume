@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Header from '../lib/_header.svelte';
-	import Aside from '../lib/_aside.svelte';
-	import Section from '../lib/_section.svelte';
-	import Subsection from '../lib/_subsection.svelte';
-	import { winWidth } from '../lib/store.js';
+	import Header from '../lib/Header.svelte';
+	import Aside from '../lib/Aside.svelte';
+	import Section from '../lib/Section.svelte';
+	import Subsection from '../lib/Subsection.svelte';
+	import { winWidth } from '../lib/store';
 
 	let currentWidth: number;
 	$: $winWidth.current = currentWidth;
@@ -20,110 +20,109 @@
 </svelte:head>
 
 <Header />
-<div class="contained">
-	<main>
-		<Section title="summary">
-			<p>
-				I am a Full-Stack JavaScript Developer with 5+ years of development experience. Two years
-				ago, I picked up Svelte (and SvelteKit) for a pet project and was instantly hooked. Now, I'm
-				seeking a role where I can couple my JavaScript experience with my love and understanding of
-				Svelte to make a big impact.
-			</p>
-		</Section>
-		<Section title="experience">
-			<Subsection
-				titleMain="Developer "
-				titleExtra="CasterFire.holtzen.rocks"
-				subtext="2021 - Present"
-			>
-				<ul>
-					<li>
-						Architected, Designed, and Developed a character spell database for <a
-							href="https://paizo.com/pathfinder">Pathfinder 2nd Ed.</a
-						>
-					</li>
-					<li>Used Svelte Framework with Sapper and later migrated to SvelteKit.</li>
-					<li>Actively participated in Svelte community.</li>
-				</ul>
-			</Subsection>
-			<Subsection
-				titleMain="Web Developer &amp; Designer"
-				titleExtra="Phillips 66 Co."
-				subtext="2016 - Present"
-			>
-				<ul>
-					<li>
-						Designed and coded cutover of 5 corporate internet sites to a backend CMS, using
-						JavaScript, Java, and Liquid templates.
-					</li>
-					<li>
-						Developed and tested numerous feature releases in Azure, utilizing the Agile methodology
-						to get important features to business users quickly.
-					</li>
-					<li>
-						Rolled out custom SharePoint landing page to 13,000 internal users, which included both
-						design and development efforts.
-					</li>
-					<li>
-						Performed well remotely on both large teams and solo efforts by utilizing communications
-						and organization tools like Microsoft Teams and Trello.
-					</li>
-				</ul>
-			</Subsection>
-			<Subsection
-				titleMain="Lead Service Desk Analyst"
-				titleExtra="Phillips 66 Co."
-				subtext="2012 - 2016"
-			>
-				<ul>
-					<li>
-						Led a team of 10 people, which included training, coaching, and documentation of both
-						internal and external systems.
-					</li>
-					<li>
-						Developed training plan, which saved the company $240,000 per year in support costs.
-					</li>
-					<li>
-						Spoke at live IT events to promote new technologies and introduce new applications
-					</li>
-				</ul>
-			</Subsection>
-		</Section>
-		<Section title="hobbies">
+<main>
+	<Section title="summary">
+		<p>
+			I am a Full-Stack JavaScript Developer with 6+ years of development experience. Three years
+			ago, I picked up SvelteKit for a pet project and was instantly hooked. Now, I'm seeking a role
+			where I can couple my JavaScript experience with my love and understanding of Svelte to make a
+			big impact.
+		</p>
+	</Section>
+	<Section title="experience">
+		<Subsection
+			titleMain="Senior Frontend Engineer"
+			titleExtra="SafelyYou"
+			subtext="2022 - Present"
+		>
 			<ul>
 				<li>
-					Tabletop Games: My pet project, <a href="https://casterfire.holtzen.rocks">CasterFire</a>,
-					is for one such game.
+					Designed and developed reusabel UI components and pages for internal SvelteKit
+					applications.
 				</li>
-				<li>Tinkering: I love to figure out what makes things tick.</li>
 				<li>
-					Woodworking: Measure twice; cut once...because there is also beauty in proper planning.
+					Migrated SvelteKit beta application to SvelteKit 1.0+, including rewrites to auth,
+					routing, and data fetching.
+				</li>
+				<li>Integrated Playwright for automated, authenticated testing.</li>
+			</ul>
+		</Subsection>
+		<Subsection
+			titleMain="Developer"
+			titleExtra="CasterFire.holtzen.rocks"
+			subtext="2021 - Present"
+		>
+			<ul>
+				<li>
+					Architected, Designed, and Developed a character spell database for <a
+						href="https://paizo.com/pathfinder">Pathfinder 2nd Ed.</a
+					>
+				</li>
+				<li>Used Svelte Framework with Sapper and later migrated to SvelteKit.</li>
+				<li>Actively participated in Svelte community.</li>
+			</ul>
+		</Subsection>
+		<Subsection
+			titleMain="Developer & Team Lead"
+			titleExtra="Phillips 66 Co."
+			subtext="2012 - 2021"
+		>
+			<h4>Web Developer & Designer</h4>
+			<ul>
+				<li>
+					Managed design, content updates, and development for main corporate website, <a
+						href="https://www.phillips66.com">phillips66.com</a
+					>, as well as many intranet sites.
+				</li>
+				<li>
+					Designed and developed cutover of 5 corporate internet sites to a backend CMS, using
+					React, Java, and Liquid templates.
+				</li>
+				<li>
+					Designed, developed, and deployed custom SharePoint landing page to 13,000 internal users
+					using React and the SharePoint Framework.
 				</li>
 			</ul>
-		</Section>
-	</main>
-	<Aside />
-</div>
+			<h4>Team Lead / Trainer</h4>
+			<ul>
+				<li>Co-led and coached a team of 34 analysts.</li>
+				<li>
+					Developed and led Microsoft Office training courses for internal Office users, saving the
+					company $240,000 per year in support costs.
+				</li>
+				<li>Spoke at live IT events to promote new technologies and introduce new applications.</li>
+			</ul>
+		</Subsection>
+	</Section>
+	<Section title="hobbies">
+		<ul>
+			<li>
+				Tabletop Games: My pet project, <a href="https://casterfire.holtzen.rocks">CasterFire</a>,
+				is for one such game.
+			</li>
+			<li>Tinkering: I love to figure out what makes things tick.</li>
+			<li>
+				Woodworking: Measure twice; cut once...because there is also beauty in proper planning.
+			</li>
+		</ul>
+	</Section>
+</main>
+<Aside />
 
 <style lang="scss">
-	.contained {
-		display: flex;
-		flex-flow: row nowrap;
-		width: 100%;
-		height: 100%;
-		@media only screen and (max-width: 650px) {
-			flex-flow: column nowrap;
-		}
-	}
 	main {
 		display: flex;
 		flex-flow: column nowrap;
+		grid-area: main;
 		justify-content: flex-start;
 		position: relative;
 		padding: 0.5em 2em;
 		max-height: 100%;
 		width: auto;
 		order: 2;
+	}
+	p {
+		margin: 1rem 0;
 	}
 	ul {
 		font-size: 1.1rem;
