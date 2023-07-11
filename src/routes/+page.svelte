@@ -37,7 +37,7 @@
 		>
 			<ul>
 				<li>
-					Designed and developed reusabel UI components and pages for internal SvelteKit
+					Designed and developed reusable UI components and pages for internal SvelteKit
 					applications.
 				</li>
 				<li>
