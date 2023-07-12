@@ -120,12 +120,24 @@
 		max-height: 100%;
 		width: auto;
 		order: 2;
+
+		@media screen and (max-width: 650px) {
+			padding: 0 0 5rem 0;
+		}
 	}
 	p {
 		margin: 1rem 0;
+
+		@media only screen and (max-width: 650px) {
+			padding: 1rem;
+		}
 	}
 	ul {
 		font-size: 1.1rem;
+
+		@media only screen and (max-width: 650px) {
+			font-size: 1.5rem;
+		}
 
 		@media print {
 			list-style-type: disc !important;

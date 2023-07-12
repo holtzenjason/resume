@@ -12,10 +12,24 @@
 	section {
 		position: relative;
 		margin-bottom: 1rem;
+
+		@media print {
+			margin: 0.5rem 0;
+		}
 	}
 
 	h2 {
 		margin: 1rem 0rem;
+
+		@media screen and (max-width: 650px) {
+			background: hsla(var(--c1-h), var(--c1-s), calc(var(--c1-l) - 12%), 20%);
+			padding: 0.25em 0.5em;
+			width: 100%;
+		}
+
+		@media print {
+			margin: 0.5rem 0rem;
+		}
 	}
 	h2,
 	.section-end {
@@ -43,14 +57,5 @@
 	h2::after,
 	.section-end::after {
 		content: '>';
-	}
-
-	@media print {
-		section {
-			margin: 0.5rem 0;
-		}
-		h2 {
-			margin: 0.5rem 0rem;
-		}
 	}
 </style>

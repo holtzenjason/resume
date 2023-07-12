@@ -12,8 +12,15 @@
 			'aside main';
 		width: 100%;
 		height: 100%;
+
 		@media only screen and (max-width: 650px) {
-			flex-flow: column nowrap;
+			grid-template-columns: 100%;
+			grid-template-rows: auto auto auto;
+			grid-template-areas:
+				'header'
+				'aside'
+				'main';
+			height: auto;
 		}
 	}
 </style>

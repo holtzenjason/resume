@@ -23,7 +23,7 @@
 		}
 
 		@media print {
-			border-bottom: 2px solid #333;
+			border-bottom: 2px solid #eee;
 			padding: 0.5em 1em;
 		}
 	}

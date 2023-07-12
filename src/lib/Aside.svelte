@@ -3,7 +3,7 @@
 	import MDI from './Icons/MDI.svelte';
 	import SimpleIcon from './Icons/SimpleIcon.svelte';
 
-	const iconSize = '20px';
+	const iconSize = '1em';
 	import { slashBreak } from './_mobileActions.js';
 	import IconText from './Icons/IconText.svelte';
 </script>
@@ -18,19 +18,19 @@
 				</IconText>
 			</li>
 			<li>
-				<IconText srText="email">
+				<IconText srText="email" gap="1em">
 					<MDI name="mdiEmail" size={iconSize} color="white" slot="icon" />
 					<a href="mailto:jason@holtzen.rocks" use:slashBreak>jason@holtzen.rocks</a>
 				</IconText>
 			</li>
 			<li>
-				<IconText srText="phone">
+				<IconText srText="phone" gap="1em">
 					<MDI name="mdiCellphoneMessage" size={iconSize} color="white" slot="icon" />
 					<a href="tel:6027933898">602.793.3898</a>
 				</IconText>
 			</li>
 			<li>
-				<IconText srText="location">
+				<IconText srText="location" gap="1em">
 					<MDI name="mdiMapMarker" size={iconSize} color="white" slot="icon" />
 					<a href="https://goo.gl/maps/8jWWf13qeKmfcQm56" target="_blank">
 						<address>Bartlesville, OK</address>
@@ -38,7 +38,7 @@
 				</IconText>
 			</li>
 			<li>
-				<IconText srText="LinkedIn">
+				<IconText srText="LinkedIn" gap="1em">
 					<SimpleIcon name="siLinkedin" size={iconSize} color="white" slot="icon" />
 					<a href="https://www.linkedin.com/in/holtzen" target="_blank" use:slashBreak
 						>linkedin.com/in/holtzen</a
@@ -46,13 +46,13 @@
 				</IconText>
 			</li>
 			<li>
-				<IconText srText="Discord">
+				<IconText srText="Discord" gap="1em">
 					<SimpleIcon name="siDiscord" size={iconSize} color="white" slot="icon" />
 					<a href="https://discordapp.com/users/holtzen#8590" target="_blank">holtzen#8590</a>
 				</IconText>
 			</li>
 			<li class="print-hidden">
-				<IconText srText="Calendly">
+				<IconText srText="Calendly" gap="1em">
 					<MDI name="mdiCalendarClock" size={iconSize} color="white" slot="icon" />
 					<a href="https://calendly.com/holtzen/talk" target="_blank">Schedule meeting</a>
 				</IconText>
@@ -64,44 +64,44 @@
 		<h4>Core Skills</h4>
 		<ul>
 			<li>
-				<IconText>
-					<SimpleIcon name="siSvelte" size="14px" useHex slot="icon" />
-					Svelte & SvelteKit
+				<IconText gap="1em">
+					<SimpleIcon name="siSvelte" size={iconSize} useHex slot="icon" />
+					Svelte
 				</IconText>
 			</li>
 			<li>
-				<IconText>
-					<SimpleIcon name="siTypescript" size="14px" useHex slot="icon" />
+				<IconText gap="1em">
+					<SimpleIcon name="siTypescript" size={iconSize} useHex slot="icon" />
 					TypeScript
 				</IconText>
 			</li>
 			<li>
-				<IconText>
-					<SimpleIcon name="siSass" size="14px" useHex slot="icon" />
+				<IconText gap="1em">
+					<SimpleIcon name="siSass" size={iconSize} useHex slot="icon" />
 					Web Design
 				</IconText>
 			</li>
 			<li>
-				<IconText>
-					<SimpleIcon name="siPlaywright" size="14px" useHex slot="icon" />
+				<IconText gap="1em">
+					<SimpleIcon name="siPlaywright" size={iconSize} useHex slot="icon" />
 					Playwright
 				</IconText>
 			</li>
 			<li>
-				<IconText>
-					<SimpleIcon name="siMongodb" size="14px" useHex slot="icon" />
+				<IconText gap="1em">
+					<SimpleIcon name="siMongodb" size={iconSize} useHex slot="icon" />
 					MongoDB
 				</IconText>
 			</li>
 			<li>
-				<IconText>
-					<MDI name="mdiDatabase" size="14px" color="white" slot="icon" />
+				<IconText gap="1em">
+					<MDI name="mdiDatabase" size={iconSize} color="white" slot="icon" />
 					SQL
 				</IconText>
 			</li>
 			<li>
-				<IconText>
-					<SimpleIcon name="siReact" size="14px" useHex slot="icon" />
+				<IconText gap="1em">
+					<SimpleIcon name="siReact" size={iconSize} useHex slot="icon" />
 					React
 				</IconText>
 			</li>
@@ -168,24 +168,30 @@
 
 		@media only screen and (max-width: 650px) {
 			display: flex;
-			flex: 1 1 50%;
-			flex-flow: row nowrap;
+			flex-flow: row wrap;
 			justify-content: space-between;
-			font-size: 1.5rem;
+			padding: 2rem 1rem;
+			height: fit-content;
 		}
 
 		@media print {
 			background: none;
-			border-right: 2px solid #333;
+			border-right: 2px solid #eee;
 			font-size: 1rem;
 			color: #333;
 			padding: 1rem 1rem 0;
 		}
 	}
 	h4 {
+		color: var(--c1-light);
 		font-size: 1.2rem;
 		text-transform: uppercase;
 		margin-left: 0;
+
+		@media print {
+			font-weight: bold;
+			text-decoration: underline;
+		}
 	}
 	address {
 		font-style: normal;
@@ -200,11 +206,7 @@
 		width: 70%;
 
 		@media only screen and (max-width: 650px) {
-			position: absolute;
-			right: 0;
-			top: 15%;
-			height: 70%;
-			width: 0.3rem;
+			display: none;
 		}
 
 		@media print {
@@ -216,12 +218,15 @@
 		position: relative;
 
 		@media only screen and (max-width: 650px) {
-			width: 50%;
+			flex: 1 1 auto;
 		}
 	}
 
 	ul {
 		word-wrap: break-word;
+		@media only screen and (max-width: 650px) {
+			width: 100%;
+		}
 	}
 
 	li {
@@ -260,7 +265,6 @@
 	.contactInfo {
 		@media only screen and (max-width: 650px) {
 			height: 100%;
-			width: 40%;
 
 			ul {
 				display: flex;
@@ -269,6 +273,9 @@
 				height: 100%;
 				padding-right: 5px;
 				li {
+					display: grid;
+					place-items: center;
+					min-height: 22px;
 					max-width: 100%;
 					width: 100%;
 				}
@@ -289,18 +296,20 @@
 			}
 		}
 		@media only screen and (max-width: 650px) {
+			flex: 0 0 auto;
 			display: flex;
 			flex-flow: column nowrap;
-			height: 100%;
-			width: 55%;
-
+			justify-content: space-between;
 			h4 {
 				margin-top: 0;
+				flex: 0 0 auto;
 			}
 
 			ul {
-				columns: 2;
-				height: 100%;
+				flex: 1 1 100%;
+				display: flex;
+				flex-flow: column nowrap;
+				justify-content: space-evenly;
 				li {
 					display: block;
 					margin-bottom: 0.3em;
@@ -338,12 +347,6 @@
 	.footnote {
 		@media print {
 			display: none;
-		}
-	}
-	@media print {
-		h4 {
-			font-weight: bold;
-			text-decoration: underline;
 		}
 	}
 </style>

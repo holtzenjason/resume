@@ -7,9 +7,9 @@
 
 <div class="subsection">
 	<h3>
-		{titleMain}
+		<span>{titleMain}</span>
 		<span class="divider">{divider}</span>
-		{titleExtra}
+		<span>{titleExtra}</span>
 		<span class="subtext">{subtext}</span>
 	</h3>
 
@@ -19,6 +19,19 @@
 <style lang="scss">
 	.subsection {
 		padding: 0 20px;
+
+		@media only screen and (max-width: 650px) {
+			padding: 0 1rem;
+
+			&:last-of-type {
+				padding-bottom: 1rem;
+			}
+		}
+
+		@media print {
+			padding: 0 0 0 0.1rem;
+		}
+
 		&:not(:last-of-type)::after {
 			display: block;
 			content: '';
@@ -27,8 +40,13 @@
 			background: linear-gradient(85deg, var(--c2-light), var(--c2-dark));
 			margin: 1rem auto;
 
+			@media only screen and (max-width: 650px) {
+				margin: 1.5rem auto;
+			}
+
 			@media print {
 				height: 0.2rem;
+				padding: 0 0 0 10px;
 			}
 		}
 	}
@@ -36,7 +54,9 @@
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: flex-start;
+		max-width: 100%;
 		width: 100%;
+
 		span {
 			display: block;
 			&.divider {
@@ -50,12 +70,37 @@
 				font-weight: normal;
 				margin-left: auto;
 				margin-right: 3rem;
+				text-align: right;
 			}
 		}
-	}
-	@media print {
-		.subsection {
-			padding: 0 0 0 10px;
+
+		@media only screen and (max-width: 650px) {
+			align-items: flex-start;
+			justify-content: space-between;
+			flex-flow: row wrap;
+			margin: 0.5em 0;
+			padding: 0;
+
+			span {
+				margin: 0;
+
+				&:first-of-type {
+					font-weight: bold;
+					text-decoration: underline;
+				}
+
+				&:not(:first-of-type) {
+					margin-left: 1em;
+				}
+
+				&.divider {
+					display: none;
+				}
+				&.subtext {
+					width: 100%;
+					margin: 0;
+				}
+			}
 		}
 	}
 </style>
