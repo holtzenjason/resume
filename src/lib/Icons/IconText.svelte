@@ -1,18 +1,34 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import type MDI from './MDI.svelte';
 	import type SimpleIcon from './SimpleIcon.svelte';
-	import { tooltip } from '$lib/Tooltip';
-
-	export let gap = '0.75em';
-	export let srText: string | undefined = undefined;
+	import tippy from 'tippy.js';
+	import 'tippy.js/dist/tippy.css';
+	import 'tippy.js/themes/material.css';
 
 	interface $$Slots {
 		icon: MDI | SimpleIcon;
 		default: HTMLElement | string;
 	}
+	let el: HTMLElement;
+	export let gap = '0.75em';
+	export let srText: string | undefined = undefined;
+
+	onMount(() => {
+		if (srText) {
+			tippy(el, {
+				allowHTML: true,
+				placement: 'left',
+				theme: 'material',
+				maxWidth: 'none',
+				interactive: true,
+				content: srText
+			});
+		}
+	});
 </script>
 
-<div style="gap: {gap};" use:tooltip={{ content: srText }}>
+<div bind:this={el} style="gap: {gap};">
 	<slot name="icon" />
 	{#if srText}
 		<span class="sr-only">{srText}</span>
