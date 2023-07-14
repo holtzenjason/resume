@@ -169,7 +169,7 @@
 		@media only screen and (max-width: 650px) {
 			display: flex;
 			flex-flow: row wrap;
-			justify-content: space-between;
+			justify-content: space-around;
 			padding: 2rem 1rem;
 			height: fit-content;
 		}
