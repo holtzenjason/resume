@@ -1,6 +1,6 @@
 :root {
 	font-size: 12px;
-	font-size: clamp(8px, 1.5vw, 15px);
+	font-size: clamp(10px, 1.5vw, 15px);
 	--font-main: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	--font-headings: 'Zilla Slab', 'Cascadia Code', Consolas, monospace;
 	--heading-base: 2.5rem;
