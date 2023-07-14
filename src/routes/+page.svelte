@@ -65,7 +65,7 @@
 		<Subsection
 			titleMain="Developer & Team Lead"
 			titleExtra="Phillips 66 Co."
-			subtext="2012 - 2021"
+			subtext="2012 - 2022"
 		>
 			<h4>Web Developer & Designer</h4>
 			<ul>
