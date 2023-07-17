@@ -136,7 +136,7 @@
 			<h4>My work</h4>
 			<ul>
 				<li>
-					<a href="https://casterfire.holtzen.rocks">casterfire.holtzen.rocks</a>
+					<a href="https://peaceful-liskov-fce03e.netlify.app/">casterfire.holtzen.rocks</a>
 				</li>
 				<li>
 					<a href="https://resume.holtzen.rocks">resume.holtzen.rocks</a>

@@ -30,11 +30,7 @@
 		</p>
 	</Section>
 	<Section title="experience">
-		<Subsection
-			titleMain="Senior Frontend Engineer"
-			titleExtra="SafelyYou"
-			subtext="2022 - Present"
-		>
+		<Subsection titleMain="Senior Frontend Engineer" titleExtra="SafelyYou" subtext="2022 - 2023">
 			<ul>
 				<li>
 					Designed and developed reusable UI components and pages for internal SvelteKit
