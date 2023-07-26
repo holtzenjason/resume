@@ -20,7 +20,7 @@
 			<li>
 				<IconText srText="email" gap="1em">
 					<MDI name="mdiEmail" size={iconSize} color="white" slot="icon" />
-					<a href="mailto:jason@holtzen.rocks" use:slashBreak>jason@holtzen.rocks</a>
+					<a href="mailto:jason.holtzen@gmail.com" use:slashBreak>jason.holtzen@gmail.com</a>
 				</IconText>
 			</li>
 			<li>
