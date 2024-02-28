@@ -1,9 +1,9 @@
 <script lang="ts">
-	import Header from '../lib/Header.svelte';
-	import Aside from '../lib/Aside.svelte';
-	import Section from '../lib/Section.svelte';
-	import Subsection from '../lib/Subsection.svelte';
-	import { winWidth } from '../lib/store';
+	import Header from '$lib/Header.svelte';
+	import Aside from '$lib/Aside.svelte';
+	import Section from '$lib/Section.svelte';
+	import Subsection from '$lib/Subsection.svelte';
+	import { winWidth } from '$lib/store';
 
 	let currentWidth: number;
 	$: $winWidth.current = currentWidth;
@@ -23,9 +23,11 @@
 <main>
 	<Section title="summary">
 		<p>
-			I am a Full-Stack JavaScript Developer with 6+ years of development experience. Three years
-			ago, I picked up SvelteKit for a pet project and was instantly hooked. Now, I'm seeking a role
-			where I can use my love and knowledge of JavaScript to build amazing applications.
+			I am a web developer and designer who loves creating web solutions that are both beautiful and
+			performant. With over 7 years of development experience spanning everything from startups to
+			Fortune 500 companies, I have a proven track record of delivering high-quality, maintainable
+			code using SharePoint, React, and Svelte. My passion for creating user-friendly, responsive,
+			and accessible web applications will make me a valuable asset to any team.
 		</p>
 	</Section>
 	<Section title="experience">
@@ -65,17 +67,17 @@
 			<h4>Web Developer & Designer</h4>
 			<ul>
 				<li>
-					Managed design, content updates, and development for main corporate website, <a
+					Used SharePoint to manage design and content for main corporate website, <a
 						href="https://www.phillips66.com">phillips66.com</a
 					>, as well as many intranet sites.
 				</li>
 				<li>
-					Designed and developed cutover of 5 corporate internet sites to a backend CMS, using
-					React, Java, and Liquid templates.
+					Developed, designed, and maintained SharePoint Online and 2013 sites, including custom web
+					parts and workflows.
 				</li>
 				<li>
-					CMS Management, including development, design, and content updates (including image
-					optimization) for 5 corporate sites.
+					Designed and developed cutover of 5 corporate internet sites to a backend CMS, using
+					React, Java, and Liquid templates.
 				</li>
 			</ul>
 			<h4>Team Lead / Trainer</h4>
@@ -96,9 +98,7 @@
 				is for one such game.
 			</li>
 			<li>Tinkering: I love to figure out what makes things tick.</li>
-			<li>
-				Woodworking: Measure twice; cut once...because there is also beauty in proper planning.
-			</li>
+			<li>Woodworking: Measure twice; cut once...because there is beauty in proper planning.</li>
 		</ul>
 	</Section>
 </main>
